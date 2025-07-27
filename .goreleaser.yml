@@ -1,0 +1,24 @@
+# .goreleaser.yml
+builds:
+  - main: ./cmd/gotop/main.go
+    binary: gotop
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+archives:
+  - format: tar.gz
+    # this name template makes the OS and Arch compatible with the results of uname.
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - none*
+changelog:
+  sort: asc
+  filters:
+    first_pull_request: true
+    exclude:
+      - '^docs:'
+      - '^test:'

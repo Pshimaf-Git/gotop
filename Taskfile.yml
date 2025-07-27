@@ -1,0 +1,22 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - go build -o ./bin/gotop.exe ./cmd/gotop/main.go
+
+  run:
+    cmds:
+      - ./bin/gotop.exe
+
+  release:
+    desc: "Create a new release"
+    cmds:
+      - goreleaser release --rm-dist
+
+  snapshot:
+    desc: "Create a snapshot release"
+    cmds:
+      - goreleaser release --snapshot --rm-dist

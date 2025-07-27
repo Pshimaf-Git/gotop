@@ -1,0 +1,3 @@
+refresh_interval: 1m30s
+column_borders_color: 'blue'
+show_column_separator: true
