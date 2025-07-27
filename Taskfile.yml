@@ -12,11 +12,11 @@ tasks:
       - ./bin/gotop.exe
 
   release:
-    desc: "Create a new release"
+    desc: 'Create a new release'
     cmds:
       - goreleaser release --rm-dist
 
   snapshot:
-    desc: "Create a snapshot release"
+    desc: 'Create a snapshot release'
     cmds:
       - goreleaser release --snapshot --rm-dist
